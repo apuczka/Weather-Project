@@ -1,0 +1,129 @@
+body{
+    background: #fffff8;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    
+}
+
+#app{
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    grid-auto-rows: minmax(100px, auto);
+    /* grid-template-columns:  */
+    height: 700px;
+    width: 500px;
+    background: whitesmoke;
+    color: black;
+    border: none;
+    box-shadow: 2px 4px 6px #444;
+    justify-content: center;
+
+    /* grid-gap: 1em; */
+    font-family: 'Oswald', sans-serif;
+}
+
+.holder{
+    /* display: block; */
+    
+
+}
+
+.entry{
+    background: rgba(59, 74, 107, .4);
+}
+
+#entryHolder{
+    
+
+}
+
+#date{
+
+}
+
+#temp{
+
+}
+
+#content{
+
+}
+
+.headline {
+    font-size: 36px;
+    color: red;
+    text-align: center;
+
+}
+.title{
+    width: 250px;
+    
+
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: 24px;
+}
+
+input{
+    display:block;
+    height: 50px;
+    width: auto;
+    background: grey;
+    color: white;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+button{
+    width: 150px;
+    height: 30px;
+    background: grey;
+    color: black;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+}
+button:hover {
+    background: #f0d43a;
+}
+h1{
+    font-size: 18px;
+}
+
+textarea{
+    background: grey;
+    color: white;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+/* Reset style for HTML element on active to have no border*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+
+} 

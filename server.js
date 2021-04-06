@@ -33,24 +33,22 @@ function listening() {
 //get requests
 app.get('/all', function(req, res) {
     res.send(projectData)
-    console.log(projectData)
+    // console.log(projectData)
 })
 
 // post request
+
+
 app.post('/add', function(req, res) {
-    if (req.body) {
-        projectData = req.body
-        console.log(projectData)
-
-    }
-    res.send({status: 'ok'});
-
+    projectData = req.body
     newEntry = {
-        temperature: req.body.temp,
-        date: req.body.date,
-        response: req.body.resp
-    }
-    projectData.push(newEntry)
-    res.send(projectData)
-    console.log(projectData)
+                temperature: req.body.temp,
+                date: req.body.date,
+                response: req.body.resp,
+                feelings: req.body.feelings
+            }
+    console.log(req.body);
+    // projectData.push(req.body);
+    res.send(projectData);
+    console.log(projectData);
 })

@@ -1,20 +1,17 @@
 /* Global Variables */
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=74630a06589374cbf88419b9a6e12b2f&units=metric';
+let apiKey = '&appid=[API_KEY]&units=metric';
 
 document.getElementById('generate').addEventListener('click', performAction);
-const feelings = document.getElementById('feelings').value;
-
 
 function performAction(e) {
-    
-
-    const newCode = document.getElementById('zip').value;
-    getCode(baseURL, newCode, apiKey).then( (data) => 
+    const feelings = document.getElementById('feelings').value;
+    const zipCode = document.getElementById('zip').value;
+    getCode(baseURL, zipCode, apiKey).then( (data) => 
     postData("/add", feelings, data))
-    // const data = getCode(baseURL, newCode, apiKey)
-    // postData(baseURL, newCode, apiKey, data)
-    if (newCode == "") {
+    // const data = getCode(baseURL, zipCode, apiKey)
+    // postData(baseURL, zipCode, apiKey, data)
+    if (zipCode == "") {
         alert("Zip code must be filled in!!!")
         return false;
     }
@@ -43,7 +40,7 @@ const postData = async (URL, feelings, data) => {
         temp: data.main.temp,
         date: newDate,
         content: feelings,
-        
+
     }
     settings(URL, postData)
 }
@@ -58,20 +55,8 @@ const settings = async (URL='',  data={}) => {
         body: JSON.stringify(data),
         
     })
-    
-    try {
-        settings(URL, postData)
-        // const fetchResponse = await fetch(baseURL + code + key + settings)
-        const newData = await res.json();
-        // postData('/add', data)
-        // const data = await fetchResponse.json();
-        // console.log(newData);
-        updateUI()
-        return newDate
-        
-    } catch (error) {
-        console.log("error", error);
-    }    
+    return updateUI()
+
 }
 
 /* Update UI*/
